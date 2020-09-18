@@ -1,0 +1,61 @@
+
+
+    <br>
+    <div class="row">
+
+      <div class="col-12">
+        
+        <a href="/newpaciente" class= " col-4 offset-4 btn btn-info">Cadastrar Paciente</a>
+
+      </div>
+
+    </div>
+    
+      <p-filtro></p-filtro>
+
+      <main ng-controller="PacientesController">
+
+
+        <div class="card">
+
+          <div class="card-header  text-center" role="tablist">
+            <ul class="nav nav-tabs card-header-tabs">
+
+
+              <li class="nav-item" >
+                <a class="nav-link active menu"  data-toggle="tab" href="#agenda-consultas" role="tab">Agenda de Consultas</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link menu"  data-toggle="tab" href="#tabela-pacientes" role="tab">Lista de Pacientes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu"  data-toggle="tab"  href="#meu-card" role="tab">Prontuário Paciente</a>
+              </li>
+
+            </ul>
+          </div>
+
+
+          <div class="tab-content" id="nav-tabContent">
+            
+            <agenda-consultas class="tab-pane fade show active" role="tabpanel" id="agenda-consultas">
+            </agenda-consultas>
+
+            <meu-card class="tab-pane fade" role="tabpanel"  id="meu-card">
+            </meu-card>        
+
+            <tabela-pacientes class="tab-pane fade" role="tabpanel"  id="tabela-pacientes">
+              <tabela-pacientes>
+
+              </div>
+        </div>  
+
+
+          </main>
+
+
+
+
+    
+ 

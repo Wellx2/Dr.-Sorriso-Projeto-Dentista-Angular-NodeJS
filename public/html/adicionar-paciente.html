@@ -1,0 +1,142 @@
+ 
+
+<div class="container">
+  
+<div class="alert alert-info " ng-show="formulario.$submit" role="alert">
+  Prontuário criado com Sucesso. 
+</div>
+
+<form novalidate name="formulario" class="formAdcPax">
+
+  <div class="row"> 
+    <div class="col-6">
+
+      <div class="form-group">
+        
+        <label  for="nome">Nome Completo:</label>
+        <input class="form-control" type="text" ng-model="paciente.nome" name="nome" placeholder="Nome Completo" required ng-maxlength="40">
+        <span  ng-show="formulario.nome.$error.required && formulario.nome.$dirty" class="form-control alert-danger">Nome Completo Obrigatório</span>
+        <span  ng-show="formulario.nome.$error.maxlength" class="form-control alert-danger">Máximo de Caracteres inserido.</span>
+
+      </div>
+
+
+      <div class="form-group ">
+        
+        <label  for="cpf">CPF:</label>
+        <input class="form-control" type="text" ng-model="paciente.cpf" name="cpf" placeholder="000.000.000-00" required ui-br-cpf-mask/>
+      
+        <span  ng-show=" formulario.cpf.$error.required && formulario.cpf.$dirty" class="form-control alert-danger">CPF Obrigatório</span>
+      
+
+      </div>  
+
+      <div class="form-group ">
+        <label  for="dataNasc">Data de Nascimento:</label>
+        <input class="form-control" type="text" ng-model="paciente.idade" name="dataNasc" placeholder="00/00/0000" required ng-maxlength="12" ui-date-mask="DD-MM-YYYY">
+        <span  ng-show="formulario.dataNasc.$error.required && formulario.dataNasc.$dirty" class="form-control alert-danger">Data de Nascimento Obrigatório</span>
+        <span  ng-show="formulario.dataNasc.$error.maxlength" class="form-control alert-danger">Formato correto Data 00/00/0000</span>
+      </div>
+
+      <div class="form-group ">
+        <label  for="telefone">Telefone:</label>
+
+
+        <input class="form-control" type="text" ng-model="paciente.telefone" name="telefone" placeholder="(99)99999-9999" required ng-maxlength="15" ui-br-phone-number="areaCode">
+
+        <span  ng-show="formulario.telefone.$error.required && formulario.telefone.$dirty" class="form-control alert-danger">Insira um número de Telefone! </span>
+        <span  ng-show="formulario.telefone.$error.maxlength"  class="form-control alert-danger">Preenchimento Correto telefone:00000-0000</span>
+      </div>
+
+      <div class="form-group ">
+        <label  for="email">E-mail:</label>
+        <input class="form-control" type="text" ng-model="paciente.email" name="email" placeholder="paciente@paciente.com.br" required ng-maxlength="40" >
+        <span  ng-show="formulario.email.$error.required && formulario.email.$dirty" class="form-control alert-danger">Email Obrigatório</span>
+        <span  ng-show="formulario.email.$error.maxlength" class="form-control alert-danger">Máximo de Caracteres inserido.</span>
+      </div>
+      
+
+      <div class="form-group ">
+        <label for="">Selecione o Sexo do Paciente:</label>
+        <select ng-model="paciente.genero" ng-options= "genero.sexo for genero in generos" name="genero" class="custom-select" required>
+         <span  ng-show="formulario.genero.$error.required && formulario.genero.$dirty" class="form-control alert-danger"></span>
+         <option  disabled value="">Selecione:</option>
+       </select>
+     </div>
+
+     <div class="form-group ">
+      <label for="fotoPaciente">Selecione a imagem do Paciente</label>
+
+      <input type="file" value="paciente.url" ng-model="paciente.url" name="fotoPaciente" class="form-control-file" id="fotoPaciente">    
+    </div>
+
+  </div>
+
+  <div class=" text-center outset  col-5 offset-1">
+
+    <div>
+      <h4>Verificação de Dados</h4>
+    </div>
+    
+
+    <div ng-if="editarpaciente">
+      <p>Prontúario:<b> {{paciente.prontuario}}</b></p>
+    </div>
+
+    <div>
+      <p>{{paciente.nome}}</p>
+    </div>
+    
+
+    
+
+    <div>
+      <p>{{paciente.cpf}}</p>
+    </div>
+
+
+    <div>
+      <p>{{paciente.idade | date:'dd-MM-yyyy'}}</p>
+    </div>
+
+
+    <div>
+      <p>{{paciente.email}}</p>
+    </div>
+
+
+    <div>
+      <p>{{paciente.telefone}}</p>
+    </div>
+
+
+
+    <div>
+      <p>{{paciente.genero.sexo}}</p>
+    </div>
+
+    <div>
+      <p>{{paciente.url}}</p>
+    </div>
+
+  <!--    <div>
+      <foto-paciente></foto-paciente>
+    </div> -->
+
+
+
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-4 offset-8">
+    <button type="submit" class="btn btn-primary" ng-disabled="formulario.$invalid" ng-if="editarpaciente" ng-click="EditPaciente(paciente)">Editar</button>
+    <button type="submit" class="btn btn-primary" name="salvar" ng-disabled="formulario.$invalid" ng-if="novopaciente" ng-click="adicionaPaciente(paciente)">Salvar</button>
+    <a href="/principal" type="btn" class= "btn btn-info" >Voltar</a>
+  </div>
+</div>
+</form>
+
+</div>
+

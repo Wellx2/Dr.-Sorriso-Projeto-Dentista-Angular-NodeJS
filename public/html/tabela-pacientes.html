@@ -1,0 +1,68 @@
+
+  <div class="table-responsive">
+   <table class="table table-striped">
+    <thead class="text-center"> 
+     <tr>
+          <th scope="col">Prontuário</th>
+          <th scope="col">Nome do Paciente</th>
+          <th scope="col">Idade</th>
+          <th scope="col">Email</th>
+          <th scope="col">CPF</th> 
+          <th scope="col">Telefone para Contato</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Remover</th>
+
+      </tr>
+    </thead>
+    
+
+      <tbody class="text-center">
+
+   
+        
+         <tr ng-class="" ng-repeat="paciente in pacientes | orderBy:'prontuario' | filter: filtro">
+
+    
+            <td><a href="#meu-card">{{paciente.prontuario}}</a></td>
+            <td>{{paciente.nome}}</td>
+            <td>{{idade(paciente.idade)}}</td>
+            <td>{{paciente.email}}</td>
+            <td>{{paciente.cpf}}</td>
+            <td>{{paciente.telefone}}</td>
+            <td class="editar"><button type="button" class="btn btn-primary"><a href="/editarpaciente/{{paciente.prontuario}}"><ion-icon class="icone" name="create"></ion-icon>  </a></button></td>
+            <td class="excluir"><button type="button" class="btn btn-danger"><a data-toggle="modal" data-target="#exampleModalCenter"><ion-icon class="icone" name="trash"></ion-icon></a></button></td>
+           <!--  <td class="excluir"><a href="" type="btn" ng-click="Excluir(paciente.prontuario)"><ion-icon name="trash"></ion-icon></a></td> -->
+          
+
+          </tr>  
+
+      </tbody>
+
+
+  </table>  
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Confirmação de exclusão</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <p>Obs: Esta ação não pode ser desfeita.</p>
+        
+        <p>Deseja excluir o Prontuário do Paciente ?</p>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-info" data-dismiss="modal" ng-click="Excluir(pacienteAtual)">Excluir Prontuário</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

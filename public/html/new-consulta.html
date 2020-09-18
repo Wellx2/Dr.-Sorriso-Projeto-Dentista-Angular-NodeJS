@@ -1,0 +1,56 @@
+
+
+
+<form novalidate class="formConsulta" name="formConsulta">
+
+	<div class="nconsulta row">
+
+
+		<div class="col-6">
+
+			<h4>Confirme os dados Paciente</h4>
+			
+			<label>Prontuário:</label>
+			<input class="form-control invalidP" type="text" placeholder="{{paciente.prontuario}}" readonly>
+			<label>Nome:</label>
+			<input class="form-control invalidP" type="text" placeholder="{{paciente.nome}}" readonly>
+			<label>CPF:</label>
+			<input class="form-control invalidP" type="text" placeholder="{{paciente.cpf}}" readonly>
+			<label>Email:</label>
+			<input class="form-control invalidP" type="text" placeholder="{{paciente.email}}" readonly>
+			<label>Sexo:</label>
+			<input class="form-control invalidP" type="text" placeholder="{{paciente.genero.sexo}}" readonly>
+
+		</div>
+
+		<div class="invalidP col-6">
+
+
+
+
+
+			<div class="invalidP">
+				<label for=""> Data para nova consulta:</label>
+				<input class="form-control" type="text" ng-model="paciente.consulta" name="consulta" placeholder="Data para consulta" ui-date-mask="DD-MM-YYYY">
+			</div>
+	
+			<div class="invalidP">
+				<label for=""> hora para nova consulta:</label>
+				<input class="form-control" type="text" ng-model="paciente.dhora" name="consulta" required  ui-time-mask="short" >
+			</div>
+		</div>
+			<!-- <input class="form-control" type="text" ng-model="paciente.consulta" name="consulta" placeholder="Data para consulta"> -->
+		</div>
+
+
+
+
+		<div class=" col-4 offset-4">
+			<button type="button" class="btn btn-info"  ng-click="Nconsulta()">Agendar Consulta</button>
+			<a href="/principal" type="btn" class= "btn btn-info" >Voltar</a>
+		</div>
+
+	</div>
+
+</form>
+

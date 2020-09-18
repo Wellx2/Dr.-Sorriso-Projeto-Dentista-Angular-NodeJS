@@ -1,0 +1,76 @@
+body {
+	
+	font-family: 'Roboto', sans-serif;
+}
+
+.fotoPerfil {
+	width: 200px;
+	height: 100px;
+
+}
+
+nav{
+
+ background-color: #e3f2fd;
+}
+
+.pterio{
+	padding-top: 1em;
+	padding-bottom: 1.5em;
+
+}
+
+
+.meuCard {
+    -moz-transition:transform 0.8s;
+    -webkit-transition:transform 0.8s;
+    -ms-transition:transform 0.8s;
+    -o-transition:transform 0.8s;
+    transition:transform 0.8s;
+}
+
+.meuCard.ng-leave-active{
+  -moz-transform: scale(0.1);
+  -webkit-transform: scale(0.1);
+  -ms-transform: scale(0.1);
+  -o-transform: scale(0.1);
+  transform: scale(0.1);
+}
+
+.formAdcPax{
+
+padding-top: 2em;
+
+}
+
+
+.fPesquisa {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.icone{
+  color:#fff;
+}
+
+
+.nconsulta{
+padding-top: 40px;
+}
+
+.invalidP{
+  margin-bottom: 10px;
+}
+
+
+.apresentainfo{
+
+
+  
+
+}
+
+
+.adcMsg {
+  margin-top: 10px;
+}

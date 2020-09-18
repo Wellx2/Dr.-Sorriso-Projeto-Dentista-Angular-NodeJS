@@ -1,0 +1,63 @@
+
+  
+  <div class="card-body">
+
+     <h5 class="card-title text-center">Pacientes</h5>
+    
+
+    <hr>
+      
+      <table class="table table-striped">
+
+        <tbody>
+    
+      <tr>
+ <td>
+    <div ng-repeat="paciente in pacientes | orderBy:'prontuario' | filter: filtro" >
+       <div class="container pterio"> 
+    <div class="row col-md-auto">
+      
+ 
+
+     <div class="col-4">  
+            
+          <img  class="img-responsive fotoPerfil  col-12 " src="{{paciente.url}}" >
+          <h6 class="col-12"> Prontúario: {{paciente.prontuario}}</h6>
+      
+      </div>
+     <!--  <p class="" src="{{foto.titulo}}"></p>
+ <-->
+  
+
+    <div class="col-6">
+      <ul>
+        <li>
+          <h5 id="nome">{{paciente.nome}}</h5>            
+           <p class="card-text" id='idade'>Idade do Paciente: <b>{{idade(paciente.idade)}}</b></p>
+           <p class="card-text" id='cpf'> CPF do Paciente: {{paciente.cpf}}</p>
+           <p class="card-text" id='telefone'> Telefone: {{paciente.telefone}}</p>
+           <p class="card-text" id='email'>E-mail: {{paciente.email}}</p>
+           <p class="card-text" id='sexo'> Sexo: {{paciente.genero.sexo}}</p>
+           <p class="card-text" id='ultimaConsulta'>Consulta: {{paciente.consulta | date : 'dd-MM-yyyy'}}</p>
+           <p>Descrição do Caso:<textarea class="form-control" ng-model='paciente.descricao'name="descricao"   ng-disabled="btnaltdescricao"></textarea></p>
+           <p class="btn-group">
+           <button class="btn btn-primary" id="btnaltdescricao" name="btnaltdescricao">Alterar</button>
+          <button class="btn btn-danger">Salvar</button>
+          </p>
+        </li>
+      </ul>
+    </div>
+    
+</td>
+  
+</div>
+</div>
+      </div>
+      <br>
+</tr>
+      </tbody>
+    </table>
+  
+
+
+  </div>
